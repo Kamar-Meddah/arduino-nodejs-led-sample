@@ -1,15 +1,23 @@
-import SerialPort from "serialport";
-import express from 'express';
+const SerialPort = require("serialport");
+const express = require('express');
 const app = express();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+
 
 app.use(express.static('public'));
 
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+io.on('connection', function (socket) {
+    socket.on('/led', function (data) {
+        let dataToWrite = data.status === 'on' ? '1' : '0';
+        port.write(dataToWrite);
+    });
+});
+
+server.listen(3000, () => console.log('Example app listening on port 3000!'));
 
 const port  = new SerialPort(`COM3`, { baudRate: 9600 });
-
-setInterval(() => port.write((Math.round(Math.random())).toString()),500);
 
 
 port.on('data', data=>console.log('res',new String(data)));

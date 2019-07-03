@@ -1,4 +1,5 @@
 $(function () {
+    const socket = io.connect('http://localhost:3000');
     $("#button").click(function () {
         $(this).toggleClass("down");
         $(this).toggleClass("up");
@@ -6,7 +7,7 @@ $(function () {
         $("#light").toggleClass("off");
         $("#front").toggleClass("lit");
         $("#front").toggleClass("dark");
-        $("#light").hasClass('on')?console.log('on'):console.log('off');
+        socket.emit('/led', { status:  $("#light").hasClass('on')?'on':'off'});
     })
 });
 // r
