@@ -1,0 +1,26 @@
+{
+  "name": "arduino-nodejs-led-sample",
+  "version": "1.0.0",
+  "description": "arduino serial communication tuto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamar-Meddah/arduino-nodejs-led-sample.git"
+  },
+  "keywords": [
+    "arduino"
+  ],
+  "author": "kamar-meddah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kamar-Meddah/arduino-nodejs-led-sample/issues"
+  },
+  "homepage": "https://github.com/Kamar-Meddah/arduino-nodejs-led-sample#readme",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "serialport": "^7.1.5"
+  }
+}
