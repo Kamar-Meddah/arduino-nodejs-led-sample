@@ -1,4 +1,11 @@
 import SerialPort from "serialport";
+import express from 'express';
+const app = express();
+
+app.use(express.static('public'));
+
+
+app.listen(3000, () => console.log('Example app listening on port 3000!'));
 
 const port  = new SerialPort(`COM3`, { baudRate: 9600 });
 

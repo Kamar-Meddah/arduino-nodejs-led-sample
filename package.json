@@ -21,6 +21,8 @@
   "homepage": "https://github.com/Kamar-Meddah/arduino-nodejs-led-sample#readme",
   "dependencies": {
     "esm": "^3.2.25",
-    "serialport": "^7.1.5"
+    "express": "^4.17.1",
+    "serialport": "^7.1.5",
+    "socket.io": "^2.2.0"
   }
 }
